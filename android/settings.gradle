@@ -1,0 +1,3 @@
+rootProject.name = 'RedBox'
+
+include ':app'
