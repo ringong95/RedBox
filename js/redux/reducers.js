@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import TestReducer from './reducers/test'
+import LoadReducer from './reducers/Loading';
+import PostsReducer from './reducers/Posts';
 
 export default combineReducers({
-test: TestReducer
+  posts: PostsReducer,
+  loading: LoadReducer,
 });

@@ -1,13 +1,15 @@
-import test from '../scenes/test'
+import test from '../scenes/test';
+import HomePage from '../scenes/Home/Home';
+
 // import { colors, typography, windowHeight } from '../styles/baseStyles';
 
 export const bottomNavigatorScreens = {
-  Account: { screen: test },
- 
+  Test: { screen: test },
+  Home: { screen: HomePage },
 };
 
 export const bottomNavigatorStyles = {
-  initialRouteName: 'Account',
+  initialRouteName: 'Home',
   // tabBarOptions: {
   //   activeBackgroundColor: colors.secondaryNavColor,
   //   labelStyle: {
