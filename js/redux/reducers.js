@@ -6,5 +6,5 @@ import NavReducer from './reducers/Nav';
 export default combineReducers({
   posts: PostsReducer,
   loading: LoadReducer,
-  navigation: NavReducer
+  // navigation: NavReducer
 });

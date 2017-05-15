@@ -2,15 +2,16 @@ import {
   StackNavigator,
   TabNavigator
 } from 'react-navigation';
-import HomePage from '../scenes/Home/Home';
+import Home from '../scenes/Home/Home';
+import SinglePost from './../scenes/SinglePost'
 
 export default StackNavigator(
   {
-    HomePage: { screen: HomePage },
-
+    Home: { screen: Home },
+    SinglePost: { screen: SinglePost },
   },
   {
-    initialRouteName: 'HomePage',
+    initialRouteName: 'Home',
     headerMode: 'screen',
     animationEnabled: true,
     tabBarOptions: {

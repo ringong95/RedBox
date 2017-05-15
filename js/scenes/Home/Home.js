@@ -26,7 +26,8 @@ class Homepage extends Component {
         <LoadingIndicator />
         :
         <PostListViewContainer
-          postsList={this.props.posts} />
+          postsList={this.props.posts}
+          navigation={this.props.navigation} />
     );
   }
 }

@@ -2,13 +2,13 @@ import React from 'react';
 import { ListView, Text, View, Image, TouchableHighlight } from 'react-native';
 import styles from './styles';
 import { regexImageLinkTest } from './../../helper/regexmatch';
-const PostList = ({ dataSource, navigation }) => {
+const PostList = ({ dataSource, onPressButton }) => {
   return (
     <ListView
       enableEmptySections={true}
       dataSource={dataSource}
       renderRow={post => (
-        <TouchableHighlight onPress={() => navigation.navigate('PotLuckInfoScreen')}>
+        <TouchableHighlight onPress={onPressButton}>
           <View>
             <Text>
               {post.data.title}
