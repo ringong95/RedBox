@@ -2,18 +2,19 @@ import {
   StackNavigator,
   TabNavigator
 } from 'react-navigation';
-import { bottomNavigatorScreens, bottomNavigatorStyles } from './BottomNavConfig';
-
-
-const BottomNavigator = TabNavigator(bottomNavigatorScreens, bottomNavigatorStyles);
-
+import HomePage from '../scenes/Home/Home';
 
 export default StackNavigator(
   {
-    HomeScreenNavigator: { screen: BottomNavigator },
+    HomePage: { screen: HomePage },
+
   },
   {
-    initialRouteName: 'HomeScreenNavigator',
+    initialRouteName: 'HomePage',
     headerMode: 'screen',
+    animationEnabled: true,
+    tabBarOptions: {
+      style: { height: 0 }
+    }
   }
 );

@@ -33,12 +33,11 @@ export default StyleSheet.create({
   separator: {
     flex: 1,
     height: 1,
-    backgroundColor: colors.LightGrey,
+    backgroundColor: colors.Black,
   },
   thumbnail: {
     padding: 5,
     marginRight: 5,
-    borderRadius: (75 / 2),
     height: 75,
     width: 75
   },

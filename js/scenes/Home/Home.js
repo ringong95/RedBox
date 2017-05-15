@@ -10,7 +10,6 @@ import { StyleSheet } from 'react-native';
 import { fetchPosts } from './../../redux/actions/postsFetchActions';
 import LoadingIndicator from './../../components/LoadingIndicator';
 import PostListViewContainer from './../../components/PostListView';
-
 class Homepage extends Component {
   componentDidMount() {
     this.props.dispatch(fetchPosts());
