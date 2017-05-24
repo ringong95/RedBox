@@ -8,7 +8,7 @@ const PostList = ({ dataSource, onPressButton }) => {
       enableEmptySections={true}
       dataSource={dataSource}
       renderRow={post => (
-        <TouchableHighlight onPress={onPressButton}>
+        <TouchableHighlight onPress={() => onPressButton(post.data.permalink)}>
           <View>
             <Text>
               {post.data.title}

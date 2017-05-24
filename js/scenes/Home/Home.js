@@ -15,12 +15,6 @@ class Homepage extends Component {
     this.props.dispatch(fetchPosts());
   }
   render() {
-    if(this.props.loading){
-      console.log('works')
-    }else{
-      console.log('wonotrks')
-      
-    }
     return (
       (this.props.loading) ?
         <LoadingIndicator />
