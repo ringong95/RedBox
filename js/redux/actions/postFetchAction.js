@@ -16,8 +16,8 @@ const getRequest = {
 
 
 export const fetchPost = (link) => (dispatch) => {
+  console.log('what')
   dispatch(toggleLoading());
-
   fetch(`https://www.reddit.com/${link}.json`, getRequest)
     .then(response => response.json())
     .then(json => {

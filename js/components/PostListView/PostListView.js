@@ -2,34 +2,18 @@ import React from 'react';
 import { ListView, Text, View, Image, TouchableHighlight } from 'react-native';
 import styles from './styles';
 import { regexImageLinkTest } from './../../helper/regexmatch';
-const PostList = ({ dataSource, onPressButton }) => {
+import Post from './../Post'
+const PostList = ({ dataSource, onPressButtonPost, onPressButtonImage }) => {
   return (
     <ListView
       enableEmptySections={true}
       dataSource={dataSource}
       renderRow={post => (
-        <TouchableHighlight onPress={() => onPressButton(post.data.permalink)}>
+        <TouchableHighlight onPress={() => onPressButtonPost(post.data.permalink)}>
           <View>
-            <Text>
-              {post.data.title}
-            </Text>
-            <Text>
-              {post.data.num_comments} comments
-            </Text>
-            <Text>
-              {post.data.ups}
-            </Text>
-            <Text>
-              {post.data.author} in {post.data.subreddit}
-            </Text>
-            {regexImageLinkTest(post.data.thumbnail) &&
-              <Image
-                style={styles.thumbnail}
-                source={{ uri: post.data.thumbnail }}
-              />
-            }
+            <Post post={post.data} onPressButtonImage={onPressButtonImage} />
           </View>
-        </TouchableHighlight >
+        </TouchableHighlight>
       )}
       renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
     />

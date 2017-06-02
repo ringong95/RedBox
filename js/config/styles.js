@@ -13,12 +13,12 @@ export const typography = {
   baseSize: 16,
   ...Platform.select({
     ios: {
-      fontMain: 'Montserrat'
+      // fontMain: 'Montserrat'
     },
     android: {
-      fontMain: 'Montserrat-regular',
+      // fontMain: 'Montserrat-regular',
     },
   }),
-  fontMainLight: 'Montserrat-Light',
+  // fontMainLight: 'Montserrat-Light',
 
 }

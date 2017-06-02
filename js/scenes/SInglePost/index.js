@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import LoadingIndicator from './../../components/LoadingIndicator';
 import Post from './../../components/Post';
+import Comment from './../../components/Comments'
 import { fetchPost } from './../../redux/actions/postFetchAction'
 class SinglePost extends Component {
   componentDidMount() {
@@ -15,10 +16,18 @@ class SinglePost extends Component {
           (this.props.loading) ?
             <LoadingIndicator />
             :
-            <Post
-              postsList={this.props.posts}
-              navigation={this.props.navigation} />
-
+            <ScrollView>
+              <Post
+                post={this.props.currentPost}
+                navigation={this.props.navigation} />
+              <View>
+                {
+                  this.props.commentData.map((comment) => {
+                    return <Comment key={comment.data.id} data={comment.data} />
+                  })
+                }
+              </View>
+            </ScrollView>
         }
       </View>
     );
@@ -26,7 +35,9 @@ class SinglePost extends Component {
 }
 const mapStateToProps = (state, ownProps) => {
   return {
-    prop: state.prop
+    currentPost: state.currentPost.postData,
+    loading: state.loading,
+    commentData: state.currentPost.commentData
   }
 }
 export default connect(mapStateToProps)(SinglePost);

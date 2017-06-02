@@ -8,5 +8,4 @@ export default combineReducers({
   posts: PostsReducer,
   loading: LoadReducer,
   currentPost: PostReducer,
-  // navigation: NavReducer
 });

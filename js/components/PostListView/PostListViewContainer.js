@@ -13,12 +13,18 @@ class PostListViewContainer extends Component {
       dataSource: ds.cloneWithRows(this.props.postsList),
     };
   }
-  onPressButton(permalink) {
+  onPressButtonPost(permalink) {
     this.props.navigation.navigate('SinglePost', { permalink })
+  }
+  onPressButtonImage(permalink) {
+    this.props.navigation.navigate('Image', { permalink })
   }
   render() {
     return (
-      <PostListView dataSource={this.state.dataSource} onPressButton={(permalink) => this.onPressButton(permalink)} />
+      <PostListView 
+        dataSource={this.state.dataSource} 
+        onPressButtonPost={(permalink) => this.onPressButtonPost(permalink)}
+        onPressButtonImage={(permalink) => this.onPressButtonImage(permalink)}  />
     );
   }
 }
